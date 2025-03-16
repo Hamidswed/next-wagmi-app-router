@@ -2,9 +2,14 @@
 import { ConnectButton } from "@/components/ConnectButton";
 import { InfoList } from "@/components/InfoList";
 import { ActionButtonList } from "@/components/ActionButtonList";
+import { TokenInfo } from "@/components/TokenInfo";
 import Image from "next/image";
 
 export default function Home() {
+  // آدرس قرارداد USDT در شبکه اتریوم
+  const usdtAddress =
+    "0x7FFB3d637014488b63fb9858E279385685AFc1e2" as `0x${string}`;
+
   return (
     <main className="min-h-screen w-full">
       <div className="container mx-auto px-4 py-8 flex flex-col items-center justify-start gap-6 md:gap-8 lg:gap-10">
@@ -28,6 +33,9 @@ export default function Home() {
         <div className="w-full max-w-md">
           <ConnectButton />
         </div>
+
+        {/* Token Info section */}
+        <TokenInfo contractAddress={usdtAddress} />
 
         {/* Action Buttons section */}
         <div className="w-full max-w-xl">
@@ -55,7 +63,7 @@ export default function Home() {
         </div> */}
 
         {/* Info List section */}
-        <div className="w-full max-w-3xl">
+        <div className="w-full max-w-2xl">
           <InfoList />
         </div>
       </div>
