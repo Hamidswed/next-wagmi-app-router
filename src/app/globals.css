@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@layer base {
+  html,
+  body {
+    @apply max-w-full overflow-x-hidden;
+  }
+
+  body {
+    @apply text-[var(--foreground)] bg-[var(--background)] font-sans antialiased;
+  }
+
+  * {
+    @apply box-border p-0 m-0;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  h1 {
+    @apply m-5;
+  }
+
+  pre {
+    @apply whitespace-pre-wrap break-words;
+  }
+}
+
+@layer components {
+  .section {
+    @apply border border-gray-200 rounded-lg p-4 bg-gray-50 m-2.5 w-[90%] text-left;
+  }
+
+  .pages {
+    @apply items-center justify-items-center text-center;
+  }
+
+  button {
+    @apply px-4 py-2.5 bg-white text-black border-2 border-black rounded-md text-base font-semibold cursor-pointer transition-all duration-300 m-4 hover:bg-black hover:text-white active:bg-gray-800 active:text-white;
+  }
+
+  .link-button {
+    @apply bg-black text-white px-2.5 py-1.5 no-underline rounded hover:bg-white hover:text-black transition-colors duration-300;
+  }
+
+  .advice {
+    @apply text-center mb-2.5 leading-6;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
